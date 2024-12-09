@@ -1,4 +1,4 @@
-# khz(.ac)? -- cat's blog-plus
+# khz(.ac)? – cat's blog-plus
 for some reason, i decided to write this in html. bear with me.
 
 ## miscellaneous
