@@ -50,11 +50,17 @@
 				}
 			}
 
+			.most-height-flex {
+				display: flex;
+				flex-direction: column;
+				min-height: 90vh;
+			}
+
 			body {
 				margin: 2rem;
 			}
 
-			#header {
+			header {
 				position: relative;
 				margin: 3rem auto 0rem;
 				font-size: 400%;
@@ -62,19 +68,39 @@
 				justify-content: center;
 				font-style: italic;
 			}
+
+			main {
+				margin: auto;
+				flex-grow: 1;
+				width: 50em
+			}
+
+			footer {
+				position: relative;
+				margin: 3rem auto 1rem;
+				font-size: 60%;
+			}
 		</style>
 		<title>omg cat's website omg</title>
 		<link rel="icon" href="/favicon.ico"/>
 	</head>
 	<body>
-		<div id="header">
-			<div style="font-size: larger; letter-spacing: +0.03em">k</div>
-			<div>H</div>
-			<div style="font-size: larger">z</div>
+		<div class="most-height-flex">
+			<header>
+				<div style="font-size: larger; letter-spacing: +0.03em">k</div>
+				<div>H</div>
+				<div style="font-size: larger">z</div>
+			</header>
+
+			<hr width=50% style="margin-bottom: 2rem" />
+
+			<main>
+				hey!
+			</main>
+
+			<footer>
+				released under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+			</footer>
 		</div>
-
-		<hr width=50% style="margin-bottom: 2rem" />
-
-		hey!
 	</body>
 </html>
