@@ -1,0 +1,79 @@
+@font-face {
+	font-family: baskervaldx;
+	src:
+		local("Baskervaldx-Reg"),
+		local("Baskervaldx Reg"),
+		url("/fonts/Baskervaldx-Reg.otf") format("opentype");
+}
+
+@font-face {
+	font-family: baskervaldx;
+	src:
+		local("Baskervaldx-Ita"),
+		local("Baskervaldx Ita"),
+		url("/fonts/Baskervaldx-Ita.otf") format("opentype");
+	font-style: italic;
+}
+
+@font-face {
+	font-family: baskervaldx;
+	src:
+		local("Baskervaldx-Bol"),
+		local("Baskervaldx Bol"),
+		url("/fonts/Baskervaldx-Bol.otf") format("opentype");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: baskervaldx;
+	src:
+		local("Baskervaldx-BolIta"),
+		local("Baskervaldx BolIta"),
+		url("/fonts/Baskervaldx-BolIta.otf") format("opentype");
+	font-weight: bold;
+	font-style: italic;
+}
+
+:root {
+	font-family: baskervaldx;
+	font-size: 1.2rem;
+}
+
+@media (min-resolution: 1.5dppx) {
+	:root {
+		font-size: 2.4rem;
+	}
+}
+
+.most-height-flex {
+	display: flex;
+	flex-direction: column;
+	min-height: 90vh;
+}
+
+body {
+	margin: 2rem;
+}
+
+header {
+	position: relative;
+	margin: 3rem auto 0rem;
+	font-size: 400%;
+	display: flex;
+	justify-content: center;
+	font-style: italic;
+}
+
+main {
+	margin: auto;
+	flex-grow: 1;
+	max-width: 30em;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+footer {
+	position: relative;
+	margin: 3rem auto 1rem;
+	font-size: 60%;
+}
