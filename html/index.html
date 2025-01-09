@@ -3,11 +3,67 @@
 <html>
 	<head>
 		<style>
+			@font-face {
+				font-family: baskervaldx;
+				src:
+					local("Baskervaldx-Reg"),
+					local("Baskervaldx Reg"),
+					url("/fonts/Baskervaldx-Reg.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: baskervaldx;
+				src:
+					local("Baskervaldx-Ita"),
+					local("Baskervaldx Ita"),
+					url("/fonts/Baskervaldx-Ita.otf") format("opentype");
+				font-style: italic;
+			}
+
+			@font-face {
+				font-family: baskervaldx;
+				src:
+					local("Baskervaldx-Bol"),
+					local("Baskervaldx Bol"),
+					url("/fonts/Baskervaldx-Bol.otf") format("opentype");
+				font-weight: bold;
+			}
+
+			@font-face {
+				font-family: baskervaldx;
+				src:
+					local("Baskervaldx-BolIta"),
+					local("Baskervaldx BolIta"),
+					url("/fonts/Baskervaldx-BolIta.otf") format("opentype");
+				font-weight: bold;
+				font-style: italic;
+			}
+
+			:root {
+				font-family: baskervaldx;
+			}
+
+			#header {
+				position: relative;
+				margin: 3rem auto 0rem;
+				font-size: 400%;
+				display: flex;
+				justify-content: center;
+				font-style: italic;
+			}
 		</style>
 		<title>omg cat's website omg</title>
 		<link rel="icon" href="/favicon.ico"/>
 	</head>
 	<body>
-	hm.
+		<div id="header">
+			<div style="font-size: larger; letter-spacing: +0.03em">k</div>
+			<div>H</div>
+			<div style="font-size: larger">z</div>
+		</div>
+
+		<hr width=50% style="margin-bottom: 2rem" />
+
+		hey! what a wonderful place this is, eh?
 	</body>
 </html>
