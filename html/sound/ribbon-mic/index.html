@@ -34,26 +34,105 @@ its cable, then designed and built a ribbon microphone as a replacement.
 aside from some background hum, unavoidable since the ribbon-to-return-wire
 loop has nonzero area and i can't magnetically shield it myself, this device
 sounds (subjectively) like a studio mic.
-<span class="margin-note"><small class="note-contents">
+<span class="sidenote"><small class="note-contents">
 	this was <i>not</i> rigorously tested in the least! i'm no expert on
 	frequency response verification of microphones (and don't have an
 	anechoic chamber to do it in, anyway). if you have reliable (and
 	cheap?) techniques for mic analysis, let me know!
 </small></span>
+<span class="margin-note"><small class="note-contents">
+	oh, also: this page was written well after the fact, and so contains
+	fewer sources than i'd like.
+</small></span>
 
 <h2>contents</h2>
+
 <ol class="toc-list">
-	<li><a href="#design">design</a></li>
 	<li>
-		<a href="#construction">construction</a>
+		<a href="#electrical">electrical</a>
+		<ol>
+			<li><a href="#how-it-works">how a ribbon works</a></li>
+			<li><a href="#preamp">transformer <i>&amp;</i> preamp</a></li>
+		</ol>
+	</li>
+	<li>
+		<a href="#mechanical">mechanical</a>
 		<ol>
 			<li><a href="#corrugation">ribbon corrugation</a></li>
 		</ol>
 	</li>
 </ol>
 
-<h2 id="design">design</h2>
-<h2 id="construction">construction</h2>
+<h2 id="electrical">electrical</h2>
+
+<h3 id="how-it-works">how a ribbon works</h3>
+
+a ribbon mic motor (the term for the bit that picks up sound) consists of a
+gossamer-thin strip of corrugated aluminum slung loosely between two powerful
+magnets (or, equivalently, ferrous pole pieces). when sound reaches the motor,
+the ribbon bends along the corrugations &mdash; which moves it across the
+magnetic field it's sitting in, generating a small potential across the ribbon
+which runs off to the preamp.
+
+<figure>
+	<img
+		src="images/ribbon-operation.jpg"
+		title="apparently i've decided to sketch all the figures for
+		this website. great..."
+		alt="an illustration of a ribbon motor"
+	/>
+	<figcaption>
+		a ribbon microphone motor, schematically, drawn... more or less
+		from memory.
+	</figcaption>
+</figure>
+
+electrically, physically, relatively simple. but there are three main problems
+you run into (well, i ran into) when trying to actually build one:
+<ol>
+	<li>
+		the signal out of the ribbon is tiny: i wound up with a
+		relatively high-output ribbon, which provides about 200 &mu;Vpp
+		when i speak assertively into it. this is easily swamped by
+		electrical noise, if you happen to live in an electrically
+		noisy apartment.
+
+		<span class="sidenote"><small class="note-contents">
+			<span class="sc">ham</span>s will look at me like i'm a
+			wuss... which, basically, i am: microvolts can
+			absolutely be amplified without a lot of noise.
+			<i>however,</i> for a ribbon mic, you have to do so
+			across three decades of bandwidth and can't selectively
+			filter out line hum because it's within your target
+			band. horowitz <i>&amp;</i> hill have a good treatise
+			on how to build an amp that can pull this off, provided
+			you have sufficient shielding (which i don't).
+		</small></span>
+	</li>
+
+	<li>
+		the ribbon itself is <i>exceedingly</i> delicate: modern ribbon
+		mics use 2.5 &mu;m or 6 &mu;m aluminum for the ribbon, which
+		breaks very easily. those foil gauges are not particularly
+		available, either, so i had to make do with something even
+		worse. more on that later.
+	</li>
+
+	<li>
+		the ribbon has very low resistance (around 200 m&Omega; for
+		mine). this may seem like a good thing, but it means that the
+		<i>slightest</i> stray resistance in the ribbon mounting setup
+		will appreciably decrease your output if you have a reasonably
+		well-matched preamp. this is probably the least problematic of
+		the three, though.
+	</li>
+</ol>
+all that to say: i did not realize quite what i had gotten myself into when i
+cut my mic cable. ah well.
+
+<h3 id="preamp">transformer <i>&amp;</i> preamp</h3>
+
+<h2 id="mechanical">mechanical</h2>
 <h3 id="corrugation">ribbon corrugation</h3>
 
 		</main>

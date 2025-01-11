@@ -120,6 +120,10 @@ figure img {
 	font-variant-numeric: tabular-nums;
 }
 
+.sc {
+	font-variant: small-caps;
+}
+
 /* partly from https://scripter.co/sidenotes-using-only-css/,
    partly from https://github.com/edwardtufte/tufte-css,
    partly just figured out */
