@@ -59,7 +59,7 @@ header {
 main {
 	flex-grow: 1;
 	margin: auto;
-	padding: 0em 2em;
+	padding: 0 2em;
 	max-width: 30em;
 	text-align: justify;
 	text-justify: inter-word;
@@ -78,7 +78,7 @@ sup {
 
 .banner {
 	position: relative;
-	margin: 2rem 3rem 0rem;
+	margin: 2rem 3rem 0;
 	font-size: 400%;
 	display: flex;
 	flex-direction: row;
@@ -88,4 +88,71 @@ sup {
 
 .tabular {
 	font-variant-numeric: tabular-nums;
+}
+
+/* partly from https://scripter.co/sidenotes-using-only-css/,
+   partly from https://github.com/edwardtufte/tufte-css */
+
+.sidenote {
+	font-size: 80%;
+	position: relative;
+}
+
+@media (min-width: 60rem) {
+	.sidenote {
+		width: 20em;
+		margin-top: 1rem;
+	}
+
+	/* alternate right and left sidenotes */
+	.sidenote-number:nth-of-type(odd) .sidenote {
+		margin-right: -23em;
+		float: right;
+		clear: right;
+		text-align: left;
+	}
+
+	.sidenote-number:nth-of-type(even) .sidenote {
+		margin-left: -23em;
+		float: left;
+		clear: left;
+		text-align: right;
+	}
+}
+
+@media (max-width: 60rem) {
+	.sidenote {
+		float: left;
+		text-align: left;
+
+		width: 100%;
+		margin: 1rem 0;
+		padding-left: 15%;
+	}
+}
+
+/* Sidenote counter */
+body {
+	counter-set: sidenote-counter -1;
+}
+
+.sidenote-number {
+	counter-increment: sidenote-counter;
+}
+
+/* Counter before the sidenote in the margin. */
+.sidenote::before {
+	content: counter(sidenote-counter)".";
+	position: relative;
+	vertical-align: baseline;
+	font-weight: bold;
+}
+/* Counter in the main body. */
+.sidenote-number::after {
+	content: counter(sidenote-counter);
+	vertical-align: super;
+	font-size: 60%;
+	font-weight: bold;
+	margin-right: 0.3em;
+	margin-left: -0.3em;
 }
