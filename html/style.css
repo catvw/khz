@@ -59,7 +59,7 @@ header {
 main {
 	flex-grow: 1;
 	margin: auto;
-	padding: 0em 2em;
+	padding: 0 2em;
 	max-width: 30em;
 	text-align: justify;
 	text-justify: inter-word;
@@ -72,13 +72,21 @@ footer {
 	font-size: 60%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h2, h3, h4, h5, h6 {
+	padding-left: 1.5em;
+}
+
 sup {
 	font-size: 60%;
 }
 
 .banner {
 	position: relative;
-	margin: 2rem 3rem 0rem;
+	margin: 2rem auto 0;
 	font-size: 400%;
 	display: flex;
 	flex-direction: row;
@@ -86,6 +94,87 @@ sup {
 	font-style: italic;
 }
 
+.head-rule {
+	margin: 1rem -2rem 2rem;
+}
+
 .tabular {
 	font-variant-numeric: tabular-nums;
+}
+
+/* partly from https://scripter.co/sidenotes-using-only-css/,
+   partly from https://github.com/edwardtufte/tufte-css,
+   partly just figured out */
+
+.note-contents {
+	font-size: 80%;
+	position: relative;
+}
+
+@media (min-width: 74rem) {
+	.note-contents {
+		width: 16rem;
+		margin-top: 1rem;
+	}
+
+	/* alternate left and right notes */
+	.sidenote:nth-of-type(even), .margin-note:nth-of-type(even) {
+		.note-contents {
+			margin-right: -18rem;
+			float: right;
+			clear: right;
+			text-align: left;
+		}
+	}
+
+	.sidenote:nth-of-type(odd), .margin-note:nth-of-type(odd) {
+		.note-contents {
+			margin-left: -18rem;
+			float: left;
+			clear: left;
+			text-align: right;
+		}
+	}
+}
+
+@media (max-width: 74rem) {
+	.note-contents {
+		float: left;
+		text-align: left;
+
+		width: 86%;
+		margin: 0.5rem 0;
+		padding-left: 14%;
+	}
+}
+
+.note-contents::before {
+	position: relative;
+	vertical-align: baseline;
+}
+
+.sidenote::after, .margin-note::after {
+	vertical-align: super;
+}
+
+/* set up counters for sidenotes only */
+body {
+	counter-set: sidenote-counter -1;
+}
+
+.sidenote {
+	counter-increment: sidenote-counter;
+}
+
+.sidenote .note-contents::before {
+	content: counter(sidenote-counter)".";
+	font-weight: bold;
+}
+
+.sidenote::after {
+	content: counter(sidenote-counter);
+	font-size: 60%;
+	font-weight: bold;
+	margin-right: 0.3em;
+	margin-left: -0.3em;
 }
