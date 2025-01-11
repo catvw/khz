@@ -159,7 +159,7 @@ sup {
 
 /* set up counters for sidenotes only */
 body {
-	counter-reset: sidenote-counter;
+	counter-set: sidenote-counter -1;
 }
 
 .sidenote {
