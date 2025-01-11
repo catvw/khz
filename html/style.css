@@ -91,37 +91,42 @@ sup {
 }
 
 /* partly from https://scripter.co/sidenotes-using-only-css/,
-   partly from https://github.com/edwardtufte/tufte-css */
+   partly from https://github.com/edwardtufte/tufte-css,
+   partly just figured out */
 
-.sidenote {
+.note-contents {
 	font-size: 80%;
 	position: relative;
 }
 
 @media (min-width: 60rem) {
-	.sidenote {
+	.note-contents {
 		width: 20em;
 		margin-top: 1rem;
 	}
 
-	/* alternate right and left sidenotes */
-	.sidenote-number:nth-of-type(odd) .sidenote {
-		margin-right: -23em;
-		float: right;
-		clear: right;
-		text-align: left;
+	/* alternate left and right notes */
+	.sidenote:nth-of-type(even), .margin-note:nth-of-type(even) {
+		.note-contents {
+			margin-right: -23em;
+			float: right;
+			clear: right;
+			text-align: left;
+		}
 	}
 
-	.sidenote-number:nth-of-type(even) .sidenote {
-		margin-left: -23em;
-		float: left;
-		clear: left;
-		text-align: right;
+	.sidenote:nth-of-type(odd), .margin-note:nth-of-type(odd) {
+		.note-contents {
+			margin-left: -23em;
+			float: left;
+			clear: left;
+			text-align: right;
+		}
 	}
 }
 
 @media (max-width: 60rem) {
-	.sidenote {
+	.note-contents {
 		float: left;
 		text-align: left;
 
@@ -131,28 +136,33 @@ sup {
 	}
 }
 
-/* Sidenote counter */
-body {
-	counter-set: sidenote-counter -1;
+.note-contents::before {
+	position: relative;
+	vertical-align: baseline;
 }
 
-.sidenote-number {
+.sidenote::after, .margin-note::after {
+	vertical-align: super;
+}
+
+/* set up counters for sidenotes only */
+body {
+	counter-reset: sidenote-counter;
+}
+
+.sidenote {
 	counter-increment: sidenote-counter;
 }
 
-/* Counter before the sidenote in the margin. */
-.sidenote::before {
+.sidenote .note-contents::before {
 	content: counter(sidenote-counter)".";
-	position: relative;
-	vertical-align: baseline;
 	font-weight: bold;
 }
-/* Counter in the main body. */
-.sidenote-number::after {
+
+.sidenote::after {
 	content: counter(sidenote-counter);
-	vertical-align: super;
 	font-size: 60%;
 	font-weight: bold;
 	margin-right: 0.3em;
-	margin-left: -0.3em;
+	margin-left: -0.2em;
 }
