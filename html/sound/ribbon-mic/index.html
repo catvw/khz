@@ -63,9 +63,8 @@ sounds (subjectively) like a studio mic.
 	</li>
 </ol>
 
-<h2 id="electrical">electrical</h2>
 
-<h3 id="how-it-works">how a ribbon works</h3>
+<h2 id="how-it-works">how a ribbon works</h2>
 
 a ribbon mic motor (the term for the bit that picks up sound) consists of a
 gossamer-thin strip of corrugated aluminum slung loosely between two powerful
@@ -131,10 +130,146 @@ you run into (well, i ran into) when trying to actually build one:
 all that to say: i did not realize quite what i had gotten myself into when i
 cut my mic cable. ah well.
 
+<h2 id="mechanical">mechanical</h2>
+
+i think this is a sensible place to start. many of the design decisions for
+this mic were a direct consequence of the mechanical constraints of the
+microphone, including what parts i could actually find.
+
+<h3 id="ribbon-material">ribbon material</h3>
+
+i decided to use imitation silver leaf (also known as signwriter's leaf, at
+least to some audiophiles on the internet). it's made of nearly pure aluminum
+beaten around 0.5 &mu;m thick, approxmately the same thickness as the ribbon
+used in <i>very</i> early commercial ribbons. (and perhaps some modern ribbons,
+though i would be surprised.)
+
+<p>
+i would have used 2.5 &mu;m 1000-grade aluminum foil, but the only quantities
+easily available on the internet are small, expensive, 6-by-12 cm rectangles
+sold specifically for reribboning microphones. since i had an interest in
+keeping this microphone cheap and repeatable, i wanted something a little more
+reliable as a source. so, naturally, i turned to alibaba. after speaking to
+around eight suppliers, i found that either:
+<ol>
+	<li>
+		they had 2.5 &mu;m foil in 8011 only, which i didn't want due
+		to the increased resistivity of the alloy,
+	</li>
+
+	<li>
+		they <i>said</i> they had 2.5 &mu;m foil in stock, but actually
+		didn't when pressed (the majority of responses), or
+	</li>
+
+	<li>
+		they could custom-make 1000-grade 2.5 &mu;m foil, but had a
+		<span class="sc">moq</span> of 10 metric tons... which,
+		according to a quick back-of-the-envelope a <span style="color:
+		#6d41a1">friend</span> prodded me to do, is probably more foil
+		than has been used in all ribbon microphones since the
+		beginning of time.
+	</li>
+</ol>
+so i had to find another source. one diyaudio thread mentioned that
+signwriter's leaf had worked, though it had been finicky, so... i decided to
+try that.
+
+<i>turns out,</i> this material is a royal pain in the ass to work with.
+
+<h3 id="corrugation">ribbon corrugation</h3>
+
+the ribbon in the mic has to be lightly corrugated to help it both hold the
+correct tension and move when under that tension. this, naturally, requires you
+to corrugate the ribbon.
+<span class="sidenote"><small class="note-contents">
+	for some reason, i feel the need to point out that this was an attempt
+	at humor.
+</small></span>
+
+<p>
+the basic procedure (at least for avid hobbyists) is (a) print some
+fine-pitched gears, then (b) run a cut ribbon between those gears. this works
+great with 6 &mu;m foil, pretty well with 2.5 &mu;m foil, and destroys 0.5
+&mu;m foil instantly &mdash; signwriter's leaf is fragile enough to break if
+you're brutish enough to touch it with a finger or blow too hard at it, much
+less callously mash it between coarse 3<span class="sc">d</span>-printed parts.
+since i could not touch the ribbon material, i came up with a corrugation
+method that does not require it. without further ado:
+
+<h4 id="corrugation-how-to">how to corrugate signwriter's leaf</h4>
+<ol>
+	<li>
+		superglue two sheets of printer paper together. these will form
+		the sacrificial shield inside of which the leaf will live.
+	</li>
+
+	<li>
+		carefully place a single sheet of leaf between the sheets of
+		paper. you will have to directly handle the leaf for this...
+		but fortunately do not have to do anything precise to it, so
+		use cotton gloves of the sort often found alongside this leaf.
+		place it approxmately square with the edges of the paper
+		shield.
+	</li>
+
+	<li>
+		slice the shield with a rotary paper cutter at a known width
+		such that the slice cuts through the leaf. this will give an
+		easy reference for getting leaf strips of the right width.
+	</li>
+
+	<li>
+		shift the leaf/shield combo 5 mm (if you're me) and slice
+		again. this will give you a strip of leaf sandwiched between
+		two strips of paper.
+	</li>
+
+	<li>
+		cut two strips of paper long enough to completely enclose the
+		leaf, and as wide as the gears you're using. soak both in
+		isopropyl alcohol and lay it perfectly flat on a table.
+	</li>
+
+	<li>
+		remove one of the shield strips from around the leaf, press the
+		leaf into the soaked strip, and carefully remove the remaining
+		shield strip from the back of the leaf. press the other soaked
+		strip onto the first strip. they should stick together just
+		enough to allow you to pick up the sandwich, leaf inside.
+	</li>
+
+	<li>
+		run the entire sandwich through the gears to corrugate it.
+		don't be afraid to press hard: <span style="color:
+		#6d41a1">&ldquo;the ribbon can sense fear,&rdquo;</span> and it
+		takes some force to get the stack to fold enough, especially
+		with fine-pitch gears.
+	</li>
+
+	<li>
+		wait for the sandwich to dry. gross.
+	</li>
+
+	<li>
+		once dry, carefully (i write that a lot, don't i?) peel
+		the top strip of paper away, then <i>very</i> carefully
+		take a pair of flat-tipped tweezers and remove the
+		now-ribbon from the other strip of paper. bending the
+		second strip in a curve right where the ribbon cleaves
+		from it can help cajole shy ribbons into separating
+		without breaking.
+	</li>
+</ol>
+
+<!-- TODO: add some photos in here! this is one of those things best served with an image. -->
+
+<h2 id="electrical">electrical</h2>
+<h3 id="resistance">resistance measurement</h3>
 <h3 id="preamp">transformer <i>&amp;</i> preamp</h3>
 
-<h2 id="mechanical">mechanical</h2>
-<h3 id="corrugation">ribbon corrugation</h3>
+
+
 
 		</main>
 
