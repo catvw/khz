@@ -104,6 +104,8 @@ figure {
 }
 
 math {
+	font-family: inherit;
+	font-variant-numeric: lining-nums proportional-nums;
 	margin: 0.5em auto;
 }
 

@@ -295,7 +295,7 @@ let's dive in.
 
 <h3 id="resistance">resistance measurement</h3>
 
-how does one measure a 500 m&Omega; resistor? using four wires!
+how does one measure a 500 m&Omega; resistor accurately? using four wires!
 
 <p>
 one of my old lab instructors said &ldquo;it's never the resistance in the
@@ -316,9 +316,9 @@ of contact on the sense line.
 theoretically, my ribbon should have a resistance of
 <math display="block">
 	<mrow>
-		(2.8 &times; <msup>
+		(2.8 &times;&nbsp;<msup>
 			<mi>10</mi>
-			<mn>-8</mn>
+			<mn>&minus;8</mn>
 		</msup>&nbsp;&Omega;&middot;m) <mo>(</mo><mfrac>
 			<mrow>
 				50 mm
@@ -337,9 +337,9 @@ course, assuming i had a correct estimate of the leaf thickness...
 <h3 id="preamp">transformer <i>&amp;</i> preamp</h3>
 
 i didn't follow horowitz <i>&amp;</i> hill's recommendation, and actually used
-a transformer. most likely this only somewhat helped, because my apartment
-<i>has no earth ground</i> and i suspect much of the noise i'm seeing is
-magnetic interference from my other equipment, but whatever.
+a transformer. most likely this only somewhat helped, because my apartment has
+<i>no earth ground</i> and i suspect much of the noise i'm seeing is magnetic
+interference from my other equipment, but whatever.
 
 my preamp consisted of a lundahl <span class="sc">ll</span>2913 1:31
 transformer from <a
@@ -348,6 +348,27 @@ and a simple differential stage afterwards, using a capacitance multiplier with
 a big power transistor to clean up any remaining supply noise, for a total gain
 of around 65 dB. exact details are left as an exercise to the reader. ;)
 
+<h2 id="results">results</h2>
+
+informally: the damn thing worked! and sounded good, too: comments from folks i
+know centered around &ldquo;it sounds like i'm in the room with you.&rdquo; it
+also picked up my relatively deep voice well, which i'm really happy about
+&mdash; ribbon tensioning is apparently an art and i am an engineer, so i'm
+glad i got it close to right after a few tries.
+
+<h3 id="further">further things to try</h3>
+if anyone wants to:
+<ol>
+	<li>
+		see what happens with different foil thickness (of course),
+	</li>
+	<li>
+		try different ribbon geometry (maybe narrower would raise the
+		output higher, due to higher flux density?),
+	</li>
+</ol>
+and perhaps get the device professionally evaluated like an actual acoustic
+engineer.
 
 		</main>
 
