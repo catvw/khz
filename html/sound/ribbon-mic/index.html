@@ -119,7 +119,7 @@ you run into (well, i ran into) when trying to actually build one:
 	</li>
 
 	<li>
-		the ribbon has very low resistance (around 200 m&Omega; for
+		the ribbon has very low resistance (around 500 m&Omega; for
 		mine). this may seem like a good thing, but it means that the
 		<i>slightest</i> stray resistance in the ribbon mounting setup
 		will appreciably decrease your output if you have a reasonably
@@ -196,8 +196,6 @@ you're brutish enough to touch it with a finger or blow too hard at it, much
 less callously mash it between coarse 3<span class="sc">d</span>-printed parts.
 since i could not touch the ribbon material, i came up with a corrugation
 method that does not require it. without further ado:
-
-<h4 id="corrugation-how-to">how to corrugate signwriter's leaf</h4>
 <ol>
 	<li>
 		superglue two sheets of printer paper together. these will form
@@ -241,10 +239,10 @@ method that does not require it. without further ado:
 
 	<li>
 		run the entire sandwich through the gears to corrugate it.
-		don't be afraid to press hard: <span style="color:
-		#6d41a1">&ldquo;the ribbon can sense fear,&rdquo;</span> and it
-		takes some force to get the stack to fold enough, especially
-		with fine-pitch gears.
+		don't be afraid to press hard: &ldquo;<span style="color:
+		#6d41a1">the ribbon can sense fear</span>,&rdquo; and it takes
+		some force to get the stack to fold enough, especially with
+		fine-pitch gears.
 	</li>
 
 	<li>
@@ -287,10 +285,68 @@ explain it.
 <!-- TODO: actually provide the photo lol -->
 
 <h2 id="electrical">electrical</h2>
+
+where the magic happens!
+
+<p>
+i don't have too much more to say other than i needed an active preamp because
+my <span class="sc">adc</span> didn't take single-digit millivolts well, so
+let's dive in.
+
 <h3 id="resistance">resistance measurement</h3>
+
+how does one measure a 500 m&Omega; resistor? using four wires!
+
+<p>
+one of my old lab instructors said &ldquo;it's never the resistance in the
+wires.&rdquo; except, sometimes, it is. measuring resistances that are
+substantially smaller than the contact resistance of the leads you're using is
+inherently unreliable using only two leads &mdash; <i>even if you measure that
+contact resistance once,</i> it will change as soon as you re-clip the thing
+you're measuring!
+
+<p>
+this is why fancy desktop multimeters have an extra set of inputs:
+<!-- TODO: image of this -->
+this allows performing a four-wire resistance measurement, which renders
+contact resistance insignificant; so long as the input current is much lower
+than the sense current, there will be no appreciable voltage drop at the point
+of contact on the sense line.
+<!-- TODO: schematic -->
+theoretically, my ribbon should have a resistance of
+<math display="block">
+	<mrow>
+		(2.8 &times; <msup>
+			<mi>10</mi>
+			<mn>-8</mn>
+		</msup>&nbsp;&Omega;&middot;m) <mo>(</mo><mfrac>
+			<mrow>
+				50 mm
+			</mrow>
+			<mrow>
+				0.5 &mu;m &middot 5 mm
+			</mrow>
+		</mfrac><mo>)</mo>
+		&approx; 560 m&Omega;
+	</mrow>,
+</math>
+which was in decent agreement with the half-ohm or so i read and would indicate
+that contact resistance introduced via the copper was negligible. this is, of
+course, assuming i had a correct estimate of the leaf thickness...
+
 <h3 id="preamp">transformer <i>&amp;</i> preamp</h3>
 
+i didn't follow horowitz <i>&amp;</i> hill's recommendation, and actually used
+a transformer. most likely this only somewhat helped, because my apartment
+<i>has no earth ground</i> and i suspect much of the noise i'm seeing is
+magnetic interference from my other equipment, but whatever.
 
+my preamp consisted of a lundahl <span class="sc">ll</span>2913 1:31
+transformer from <a
+href="https://geistnote.com/lundahl-ll2913-1-37-with-optional-pcb/">geistnote</a>
+and a simple differential stage afterwards, using a capacitance multiplier with
+a big power transistor to clean up any remaining supply noise, for a total gain
+of around 65 dB. exact details are left as an exercise to the reader. ;)
 
 
 		</main>

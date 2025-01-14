@@ -88,18 +88,23 @@ sup {
 
 figure {
 	text-align: center;
+
+	figcaption {
+		margin: auto;
+		max-width: 70%;
+		font-size: smaller;
+	}
+
+	img {
+		margin: auto;
+		max-width: 80%;
+		border: 0.2rem solid gray;
+	}
+
 }
 
-figure figcaption {
-	margin: auto;
-	max-width: 70%;
-	font-size: smaller;
-}
-
-figure img {
-	margin: auto;
-	max-width: 80%;
-	border: 0.2rem solid gray;
+math {
+	margin: 0.5em auto;
 }
 
 .banner {
