@@ -179,7 +179,12 @@ math {
 
 			width: 86%;
 			margin: 0.5rem 0;
-			padding-left: 14%;
+			margin-left: 10%;
+			padding-left: 4%;
+
+			border-left-style: solid;
+			border-width: 0.13rem;
+			border-color: gray;
 		}
 	}
 }
