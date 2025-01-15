@@ -136,20 +136,24 @@ math {
    partly from https://github.com/edwardtufte/tufte-css,
    partly just figured out */
 
-.note-contents {
-	font-size: 80%;
-	position: relative;
+.sidenote, .margin-note {
+	small {
+		font-size: 80%;
+		position: relative;
+	}
 }
 
-@media (min-width: 74rem) {
-	.note-contents {
-		width: 16rem;
-		margin-top: 1rem;
+@media (min-width: 79rem) {
+	.sidenote, .margin-note {
+		small {
+			width: 16rem;
+			margin-top: 1rem;
+		}
 	}
 
 	/* alternate left and right notes */
 	.sidenote:nth-of-type(even), .margin-note:nth-of-type(even) {
-		.note-contents {
+		small {
 			margin-right: -18rem;
 			float: right;
 			clear: right;
@@ -158,7 +162,7 @@ math {
 	}
 
 	.sidenote:nth-of-type(odd), .margin-note:nth-of-type(odd) {
-		.note-contents {
+		small {
 			margin-left: -18rem;
 			float: left;
 			clear: left;
@@ -167,20 +171,24 @@ math {
 	}
 }
 
-@media (max-width: 74rem) {
-	.note-contents {
-		float: left;
-		text-align: left;
+@media (max-width: 79rem) {
+	.sidenote, .margin-note {
+		small {
+			float: left;
+			text-align: left;
 
-		width: 86%;
-		margin: 0.5rem 0;
-		padding-left: 14%;
+			width: 86%;
+			margin: 0.5rem 0;
+			padding-left: 14%;
+		}
 	}
 }
 
-.note-contents::before {
-	position: relative;
-	vertical-align: baseline;
+.sidenote, .margin-note {
+	small::before {
+		position: relative;
+		vertical-align: baseline;
+	}
 }
 
 .sidenote::after, .margin-note::after {
@@ -196,7 +204,7 @@ body {
 	counter-increment: sidenote-counter;
 }
 
-.sidenote .note-contents::before {
+.sidenote small::before {
 	content: counter(sidenote-counter)".";
 	font-weight: bold;
 }
@@ -206,7 +214,7 @@ body {
 	font-size: 60%;
 	font-weight: bold;
 	margin-right: 0.3em;
-	margin-left: -0.3em;
+	margin-left: -0.5em; /* actually just a space correction */
 }
 
 /* table of contents formatting */
