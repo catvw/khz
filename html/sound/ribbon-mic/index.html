@@ -73,7 +73,6 @@ sounds (subjectively) like a studio mic.
 	</li>
 </ol>
 
-
 <h2 id="how-it-works">how a ribbon works</h2>
 
 a ribbon mic motor (the term for the bit that picks up sound) consists of a
@@ -227,6 +226,18 @@ method that does not require it. without further ado:
 		easy reference for getting leaf strips of the right width.
 	</li>
 
+<figure>
+	<img
+		src="images/sandwich-prep.jpg"
+		title="(something something don't eat it)"
+		alt="a leaf sandwich ready to be sliced"
+	/>
+	<figcaption>
+		a half-sliced shielded square of leaf, courtesy of the best
+		helping hands a girl could ask for.
+	</figcaption>
+</figure>
+
 	<li>
 		shift the leaf/shield combo 5 mm (if you're me) and slice
 		again. this will give you a strip of leaf sandwiched between
@@ -247,6 +258,19 @@ method that does not require it. without further ado:
 		enough to allow you to pick up the sandwich, leaf inside.
 	</li>
 
+<figure>
+	<img
+		src="images/wet-alcohol-transfer.jpg"
+		title="don't use ethanol. i know it would be funny... but it
+		evaporates a bit too fast."
+		alt="a ribbon on alcohol-soaked paper"
+	/>
+	<figcaption>
+		the ribbon sandwich, midway through transfer from one set of
+		shield strips to another.
+	</figcaption>
+</figure>
+
 	<li>
 		run the entire sandwich through the gears to corrugate it.
 		don't be afraid to press hard: &ldquo;<span style="color:
@@ -254,6 +278,19 @@ method that does not require it. without further ado:
 		some force to get the stack to fold enough, especially with
 		fine-pitch gears.
 	</li>
+
+<figure>
+	<img
+		src="images/sandwich-gears.jpg"
+		title="my hands aren't ready for the internet yet, so they're
+		not actually applying the requisite force here."
+		alt="a ribbon sandwich getting crunched"
+	/>
+	<figcaption>
+		the gear position is slightly misleading, as the sandwich
+		should look <i>smushed</i> when rolling over it.
+	</figcaption>
+</figure>
 
 	<li>
 		wait for the sandwich to dry. gross.
@@ -269,17 +306,31 @@ method that does not require it. without further ado:
 		without breaking.
 	</li>
 </ol>
+for ribbon threading, i find it helpful to use the tweezers to superglue small
+paper tabs to either end of the ribbon (usually just leftover from cutting it).
+these allow ribbon manipulation without actually coming in contact with the
+fragile metal itself.
 
-<!-- TODO: add some photos in here! this is one of those things best served with an image. -->
+<figure>
+	<img
+		src="images/finished-ribbon.jpg"
+		title="these things are hilariously fragile. you *will* break
+		them."
+		alt="a finished ribbon"
+	/>
+	<figcaption>
+		a ribbon ready to be threaded.
+	</figcaption>
+</figure>
 
 <h3 id="magnets">magnets</h3>
 
 use the strongest bar magnets you can find. they don't appreciably slow the
 ribbon, and the more flux you can pack into the gap, the higher the output of
-the microphone. i used two 3 by 12 by 60 mm <span class="sc">n</span>52 <!--
-TODO: check this! --> magnets spaced 6 mm apart, which (in combination with my
-foil choice) gave me a relatively high-output ribbon. and the higher the
-output, the easier the preamp will be, and the less shielding you'll need...
+the microphone. i used two 5 by 10 by 60 mm <span class="sc">n</span>52 magnets
+spaced 6 mm apart, which (in combination with my foil choice) gave me a
+relatively high-output ribbon. and the higher the output, the easier the preamp
+will be, and the less shielding you'll need...
 
 <h3 id="ribbon-holding">holding the ribbon</h3>
 
@@ -289,10 +340,24 @@ of a hundred microohms, which becomes on the order of a hundred ohms on the
 other side of a 1:31 step-up transformer. <i>any</i> stray resistance in the
 mounting armature will reflect to (potentially) hundreds of ohms, which tends
 to have a deleterious effect on low-input-impedance preamps. this is not,
-however, a difficult problem to solve, so i will simply provide a photo and
-explain it.
+however, a difficult problem to solve, so i will simply provide a terrible
+photo and explain it.
 
-<!-- TODO: actually provide the photo lol -->
+<figure>
+	<img
+		src="images/clamp-from-side.jpg"
+		title="sorry about the angle. i didn't want to take the thing
+		apart."
+		alt="a close-up shot of a ribbon clamp"
+	/>
+	<figcaption>
+		the ribbon clamp from the side. note the screw and the hint of
+		copper near the ribbon; that's what makes contact. the soldered
+		connection is behind.
+	</figcaption>
+</figure>
+
+<!-- TODO: actually explain it lol -->
 
 <h2 id="electrical">electrical</h2>
 
@@ -316,13 +381,24 @@ contact resistance once,</i> it will change as soon as you re-clip the thing
 you're measuring!
 
 <p>
-this is why fancy desktop multimeters have an extra set of inputs:
-<!-- TODO: image of this -->
-this allows performing a four-wire resistance measurement, which renders
-contact resistance insignificant; so long as the input current is much lower
-than the sense current, there will be no appreciable voltage drop at the point
-of contact on the sense line.
-<!-- TODO: schematic -->
+this is why fancy desktop multimeters have an extra set of inputs. this allows
+performing a four-wire resistance measurement, which renders contact resistance
+insignificant; so long as the input current is much lower than the sense
+current, there will be no appreciable voltage drop at the point of contact on
+the sense line.
+<figure>
+	<img
+		src="images/four-wire.jpg"
+		title="i will take any and every opportunity to mention this
+		photo to someone."
+		alt="an explanation of why four-wire measurement works"
+	/>
+	<figcaption>
+		my humble justification of why four-wire measurement works.
+		this is not that complicated but also not that common, so i've
+		brought it out here.
+	</figcaption>
+</figure>
 theoretically, my ribbon should have a resistance of
 <math display="block">
 	<mrow>
@@ -334,7 +410,7 @@ theoretically, my ribbon should have a resistance of
 				50 mm
 			</mrow>
 			<mrow>
-				0.5 &mu;m &middot 5 mm
+				0.5 &mu;m &middot; 5 mm
 			</mrow>
 		</mfrac><mo>)</mo>
 		&approx; 560 m&Omega;
@@ -346,17 +422,20 @@ course, assuming i had a correct estimate of the leaf thickness...
 
 <h3 id="preamp">transformer <i>&amp;</i> preamp</h3>
 
-i didn't follow horowitz <i>&amp;</i> hill's recommendation, and actually used
-a transformer. most likely this only somewhat helped, because my apartment has
-<i>no earth ground</i> and i suspect much of the noise i'm seeing is magnetic
-interference from my other equipment, but whatever.
+i didn't follow horowitz <i>&amp;</i> hill's proposition, and used a
+transformer to make the requisite low noise floor easier to achieve. most
+likely this only somewhat helped, because my apartment has <i>no earth
+ground</i> and i suspect much of the noise i'm seeing is magnetic interference
+from my other equipment, but whatever.
 
+<p>
 my preamp consisted of a lundahl <span class="sc">ll</span>2913 1:31
 transformer from <a
 href="https://geistnote.com/lundahl-ll2913-1-37-with-optional-pcb/">geistnote</a>
 and a simple differential stage afterwards, using a capacitance multiplier with
-a big power transistor to clean up any remaining supply noise, for a total gain
-of around 65 dB. exact details are left as an exercise to the reader. ;)
+a big power transistor to clean up any remaining supply noise, for a total
+voltage gain of around 65 dB. exact details are left as an exercise to the
+reader. mostly because i don't feel like drawing a schematic. ;)
 
 <h2 id="results">results</h2>
 
