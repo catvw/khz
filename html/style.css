@@ -54,6 +54,7 @@ body {
 
 header {
 	margin: auto;
+	text-align: center;
 }
 
 main {
@@ -77,11 +78,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2, h3, h4, h5, h6 {
-	padding-left: 1.5em;
+	padding-left: 2rem;
 }
 
 sup {
 	font-size: 60%;
+}
+
+
+figure {
+	text-align: center;
+
+	figcaption {
+		margin: auto;
+		max-width: 80%;
+		font-size: smaller;
+	}
+
+	img {
+		margin: auto;
+		max-width: 100%;
+		max-height: 28em;
+		border: 0.2rem solid gray;
+	}
+
+}
+
+math {
+	font-family: inherit;
+	font-variant-numeric: lining-nums proportional-nums;
+	margin: 0.5em auto;
 }
 
 .banner {
@@ -102,24 +128,32 @@ sup {
 	font-variant-numeric: tabular-nums;
 }
 
+.sc {
+	font-variant: small-caps;
+}
+
 /* partly from https://scripter.co/sidenotes-using-only-css/,
    partly from https://github.com/edwardtufte/tufte-css,
    partly just figured out */
 
-.note-contents {
-	font-size: 80%;
-	position: relative;
+.sidenote, .margin-note {
+	small {
+		font-size: 80%;
+		position: relative;
+	}
 }
 
-@media (min-width: 74rem) {
-	.note-contents {
-		width: 16rem;
-		margin-top: 1rem;
+@media (min-width: 79rem) {
+	.sidenote, .margin-note {
+		small {
+			width: 16rem;
+			margin-top: 1rem;
+		}
 	}
 
 	/* alternate left and right notes */
 	.sidenote:nth-of-type(even), .margin-note:nth-of-type(even) {
-		.note-contents {
+		small {
 			margin-right: -18rem;
 			float: right;
 			clear: right;
@@ -128,7 +162,7 @@ sup {
 	}
 
 	.sidenote:nth-of-type(odd), .margin-note:nth-of-type(odd) {
-		.note-contents {
+		small {
 			margin-left: -18rem;
 			float: left;
 			clear: left;
@@ -137,20 +171,29 @@ sup {
 	}
 }
 
-@media (max-width: 74rem) {
-	.note-contents {
-		float: left;
-		text-align: left;
+@media (max-width: 79rem) {
+	.sidenote, .margin-note {
+		small {
+			float: left;
+			text-align: left;
 
-		width: 86%;
-		margin: 0.5rem 0;
-		padding-left: 14%;
+			width: 86%;
+			margin: 0.5rem 0;
+			margin-left: 10%;
+			padding-left: 4%;
+
+			border-left-style: solid;
+			border-width: 0.13rem;
+			border-color: gray;
+		}
 	}
 }
 
-.note-contents::before {
-	position: relative;
-	vertical-align: baseline;
+.sidenote, .margin-note {
+	small::before {
+		position: relative;
+		vertical-align: baseline;
+	}
 }
 
 .sidenote::after, .margin-note::after {
@@ -166,7 +209,7 @@ body {
 	counter-increment: sidenote-counter;
 }
 
-.sidenote .note-contents::before {
+.sidenote small::before {
 	content: counter(sidenote-counter)".";
 	font-weight: bold;
 }
@@ -176,5 +219,17 @@ body {
 	font-size: 60%;
 	font-weight: bold;
 	margin-right: 0.3em;
-	margin-left: -0.3em;
+	margin-left: -0.5em; /* actually just a space correction */
+}
+
+/* table of contents formatting */
+.toc-list {
+	list-style-type: none;
+	font-size: larger;
+}
+
+.toc-list ol {
+	list-style-type: none;
+	padding-inline-start: 2rem;
+	font-size: smaller;
 }
