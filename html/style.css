@@ -1,3 +1,5 @@
+@import url("attr.css");
+
 @font-face {
 	font-family: baskervaldx;
 	src:
@@ -128,7 +130,7 @@ math {
 	font-variant-numeric: tabular-nums;
 }
 
-.sc {
+sc {
 	font-variant: small-caps;
 }
 
