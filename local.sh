@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-npx http-server html -p 8080
+npx live-server --no-browser --port=8080 html
