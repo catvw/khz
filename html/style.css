@@ -67,6 +67,7 @@ footer {
 	position: relative;
 	margin: 3rem auto 1rem;
 	font-size: 60%;
+	text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -114,6 +115,28 @@ math {
 	flex-direction: row;
 	justify-content: center;
 	font-style: italic;
+}
+
+.backlinks {
+	font-family: monospace;
+	font-size: 1rem;
+
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	justify-content: center;
+
+	> * {
+		margin: 0em 1em;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+footer .backlinks {
+	margin-bottom: 1em;
 }
 
 .head-rule {
