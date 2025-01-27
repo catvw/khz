@@ -116,6 +116,28 @@ math {
 	font-style: italic;
 }
 
+.backlinks {
+	font-family: monospace;
+	font-size: 1rem;
+
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	justify-content: center;
+
+	> * {
+		margin: 0em 1em;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+footer .backlinks {
+	margin-bottom: 1em;
+}
+
 .head-rule {
 	margin: 1rem -2rem 2rem;
 }
