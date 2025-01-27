@@ -213,6 +213,26 @@ sc {
 			border-left-style: solid;
 			border-width: 0.13rem;
 			border-color: gray;
+
+			display: none;
+		}
+	}
+
+	.margin-note small::before {
+		content: "*";
+		font-weight: bold;
+	}
+
+	.margin-note::after {
+		content: "*";
+		font-size: 80%;
+		font-weight: bold;
+		margin-right: 0.3em;
+	}
+
+	.margin-note:active, .margin-note:hover, .sidenote:active, .sidenote:hover {
+		small {
+			display: inherit !important;
 		}
 	}
 }
@@ -225,7 +245,7 @@ sc {
 }
 
 .sidenote::after, .margin-note::after {
-	vertical-align: super;
+	vertical-align: text-top;
 }
 
 /* set up counters for sidenotes only */
@@ -240,6 +260,23 @@ body {
 .sidenote small::before {
 	content: counter(sidenote-counter)".";
 	font-weight: bold;
+}
+
+.sidenote::before, .margin-note::before {
+	display: inline-block;
+	position: relative;
+
+	/* horrible margin fuckery to get this target in the right place;
+	   thanks, as! */
+	width: 2em;
+	height: 3em;
+	margin-left: -0.7em;
+	margin-right: -1.3em;
+	margin-top: -2em;
+	margin-bottom: -1em;
+
+	top: 0.5em;
+	content: " ";
 }
 
 .sidenote::after {
